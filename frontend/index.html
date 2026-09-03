@@ -1,0 +1,3913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sovereign AI Workbench</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(91, 141, 239, 0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(31, 201, 151, 0.14),
+                    transparent 30%
+                ),
+                #f5f8fc;
+
+            color: #172033;
+
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+           LOGIN PAGE
+        ===================================================== */
+
+        #loginPage {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        #loginPage::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+
+            height: 520px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(83, 126, 229, 0.10);
+
+            top: -200px;
+
+            left: -180px;
+        }
+
+
+        #loginPage::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 560px;
+
+            height: 560px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(38, 198, 172, 0.09);
+
+            bottom: -270px;
+
+            right: -200px;
+        }
+
+
+        .login-container {
+
+            width: min(1120px, 100%);
+
+            min-height: 650px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px
+                rgba(30, 55, 90, 0.16);
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .login-left {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #122f55,
+                    #174a72 55%,
+                    #126e72
+                );
+
+            color: white;
+
+            padding: 70px 64px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .login-left::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 50%;
+
+            bottom: -280px;
+
+            right: -180px;
+
+            box-shadow:
+                0 0 0 80px
+                rgba(255,255,255,0.025),
+                0 0 0 160px
+                rgba(255,255,255,0.02);
+        }
+
+
+        .brand-icon {
+
+            width: 82px;
+
+            height: 82px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 42px;
+
+            margin-bottom: 36px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .login-left h1 {
+
+            font-size: 43px;
+
+            line-height: 1.08;
+
+            margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .login-left h1 span {
+
+            color: #78ead0;
+        }
+
+
+        .login-description {
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            max-width: 500px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .feature-pills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 38px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .feature-pill {
+
+            padding: 10px 15px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
+
+            font-size: 13px;
+
+            color:
+                rgba(255,255,255,0.88);
+        }
+
+
+        .feature-pill::before {
+
+            content: "●";
+
+            color: #62e4c2;
+
+            margin-right: 7px;
+
+            font-size: 10px;
+        }
+
+
+        .login-right {
+
+            padding: 60px 62px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #ffffff;
+        }
+
+
+        .login-box {
+
+            width: 100%;
+
+            max-width: 430px;
+        }
+
+
+        .status-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 9px 15px;
+
+            border-radius: 30px;
+
+            background: #ecfbf6;
+
+            color: #137d68;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #35c89d;
+
+            box-shadow:
+                0 0 0 5px
+                rgba(53,200,157,0.10);
+        }
+
+
+        .login-box h2 {
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+
+            color: #152139;
+        }
+
+
+        .login-subtitle {
+
+            color: #8090aa;
+
+            line-height: 1.6;
+
+            margin-bottom: 35px;
+
+            font-size: 15px;
+        }
+
+
+        .input-group {
+
+            margin-bottom: 20px;
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 9px;
+
+            color: #26334b;
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 17px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size: 18px;
+
+            z-index: 2;
+        }
+
+
+        .login-input {
+
+            width: 100%;
+
+            height: 56px;
+
+            border:
+                1px solid
+                #dce4ef;
+
+            border-radius: 13px;
+
+            background: #f8fafc;
+
+            padding:
+                0 48px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            color: #1d293d;
+
+            transition: 0.25s;
+        }
+
+
+        .login-input:focus {
+
+            border-color: #2387a2;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(35,135,162,0.08);
+        }
+
+
+        .password-toggle {
+
+            position: absolute;
+
+            right: 16px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            border: none;
+
+            background: none;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            opacity: 0.65;
+        }
+
+
+        .login-button {
+
+            width: 100%;
+
+            height: 57px;
+
+            border: none;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1764aa,
+                    #168b87
+                );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.3px;
+
+            cursor: pointer;
+
+            margin-top: 8px;
+
+            transition: 0.25s;
+
+            box-shadow:
+                0 12px 25px
+                rgba(23,100,170,0.20);
+        }
+
+
+        .login-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 16px 30px
+                rgba(23,100,170,0.25);
+        }
+
+
+        .login-button:active {
+
+            transform:
+                translateY(0);
+        }
+
+
+        .login-error {
+
+            display: none;
+
+            margin-top: 14px;
+
+            padding: 13px 15px;
+
+            border-radius: 10px;
+
+            background: #fff0f1;
+
+            border:
+                1px solid
+                #ffc9ce;
+
+            color: #c83a46;
+
+            font-size: 13px;
+        }
+
+
+        .login-features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 9px;
+
+            margin-top: 30px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid
+                #edf0f5;
+        }
+
+
+        .mini-feature {
+
+            text-align: center;
+
+            padding: 12px 6px;
+
+            border-radius: 10px;
+
+            background: #f7f9fc;
+        }
+
+
+        .mini-feature-icon {
+
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .mini-feature span {
+
+            display: block;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.8px;
+
+            color: #66748a;
+        }
+
+
+
+        /* =====================================================
+           DASHBOARD
+        ===================================================== */
+
+        #dashboard {
+
+            display: none;
+
+            min-height: 100vh;
+        }
+
+
+        .topbar {
+
+            height: 76px;
+
+            background: white;
+
+            border-bottom:
+                1px solid
+                #e8edf4;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 34px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 20;
+        }
+
+
+        .topbar-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .topbar-logo {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #15375e,
+                    #168d89
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 21px;
+        }
+
+
+        .topbar-title {
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            color: #17253b;
+        }
+
+
+        .topbar-subtitle {
+
+            font-size: 11px;
+
+            color: #8491a7;
+
+            margin-top: 2px;
+        }
+
+
+        .topbar-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        .online-status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #14836e;
+
+            background: #edfbf6;
+
+            padding: 9px 13px;
+
+            border-radius: 20px;
+        }
+
+
+        .online-status::before {
+
+            content: "";
+
+            width: 7px;
+
+            height: 7px;
+
+            background: #36c99e;
+
+            border-radius: 50%;
+        }
+
+
+        .user-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        .user-avatar {
+
+            width: 34px;
+
+            height: 34px;
+
+            background: #eaf1fa;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .logout-button {
+
+            border: none;
+
+            background: #f4f6f9;
+
+            padding: 9px 13px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #59677b;
+        }
+
+
+        .logout-button:hover {
+
+            background: #ffecef;
+
+            color: #c63c49;
+        }
+
+
+        .dashboard-layout {
+
+            display: grid;
+
+            grid-template-columns: 245px 1fr;
+
+            min-height:
+                calc(100vh - 76px);
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+
+            background: #ffffff;
+
+            border-right:
+                1px solid
+                #e7edf4;
+
+            padding: 25px 18px;
+
+            position: sticky;
+
+            top: 76px;
+
+            height:
+                calc(100vh - 76px);
+
+            overflow-y: auto;
+        }
+
+
+        .sidebar-section {
+
+            margin-bottom: 28px;
+        }
+
+
+        .sidebar-heading {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.1px;
+
+            color: #97a3b6;
+
+            text-transform: uppercase;
+
+            margin:
+                0 10px 12px;
+        }
+
+
+        .system-card {
+
+            padding: 13px;
+
+            border-radius: 12px;
+
+            background: #f7f9fc;
+
+            margin-bottom: 8px;
+
+            border:
+                1px solid
+                #edf0f5;
+        }
+
+
+        .system-card-title {
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            color: #2c3950;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .system-card-value {
+
+            font-size: 10px;
+
+            color: #7d899b;
+
+            margin-top: 5px;
+
+            padding-left: 21px;
+        }
+
+
+        .side-status {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #35c89d;
+        }
+
+
+        .privacy-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fbf8,
+                    #f4f9ff
+                );
+
+            border:
+                1px solid
+                #d9eee9;
+
+            padding: 16px;
+
+            border-radius: 13px;
+        }
+
+
+        .privacy-box strong {
+
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .privacy-box p {
+
+            color: #718197;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+        }
+
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        .main-content {
+
+            padding:
+                32px 38px 60px;
+
+            max-width: 1500px;
+
+            width: 100%;
+
+            margin: 0 auto;
+        }
+
+
+        .welcome-section {
+
+            margin-bottom: 28px;
+        }
+
+
+        .welcome-section h1 {
+
+            font-size: 28px;
+
+            color: #18253a;
+
+            margin-bottom: 7px;
+        }
+
+
+        .welcome-section p {
+
+            color: #7c899c;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           FEATURE CARDS
+        ===================================================== */
+
+        .feature-card {
+
+            background: white;
+
+            border:
+                1px solid
+                #e4eaf2;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(30,55,90,0.05);
+
+            margin-bottom: 24px;
+
+            overflow: hidden;
+        }
+
+
+        .feature-card-header {
+
+            padding: 21px 24px;
+
+            border-bottom:
+                1px solid
+                #edf1f5;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .card-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .card-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 11px;
+
+            background: #edf5fb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+
+        .card-title h2 {
+
+            font-size: 16px;
+
+            color: #233149;
+
+            margin-bottom: 3px;
+        }
+
+
+        .card-title p {
+
+            font-size: 11px;
+
+            color: #8a96a8;
+        }
+
+
+        .card-badge {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            background: #edf9f5;
+
+            color: #16816c;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .card-body {
+
+            padding: 24px;
+        }
+
+
+
+        /* =====================================================
+           PDF UPLOAD
+        ===================================================== */
+
+        .upload-area {
+
+            border:
+                2px dashed
+                #cfdbe8;
+
+            border-radius: 15px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            background: #fbfcfe;
+
+            transition: 0.25s;
+
+            cursor: pointer;
+        }
+
+
+        .upload-area:hover {
+
+            border-color: #3794a2;
+
+            background: #f6fbfc;
+        }
+
+
+        .upload-icon {
+
+            width: 62px;
+
+            height: 62px;
+
+            margin:
+                0 auto 15px;
+
+            border-radius: 16px;
+
+            background: #eaf5f8;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 29px;
+        }
+
+
+        .upload-area h3 {
+
+            font-size: 15px;
+
+            color: #29364c;
+
+            margin-bottom: 6px;
+        }
+
+
+        .upload-area p {
+
+            font-size: 12px;
+
+            color: #8b98aa;
+
+            margin-bottom: 17px;
+        }
+
+
+        .choose-file-button {
+
+            display: inline-block;
+
+            background: #176ca4;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        #fileInput {
+
+            display: none;
+        }
+
+
+        .upload-result {
+
+            display: none;
+
+            margin-top: 17px;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        .upload-success {
+
+            background: #edfaf5;
+
+            border:
+                1px solid
+                #c8ecdf;
+
+            color: #147660;
+        }
+
+
+        .upload-error {
+
+            background: #fff1f2;
+
+            border:
+                1px solid
+                #ffd0d4;
+
+            color: #c43d49;
+        }
+
+
+
+        /* =====================================================
+           AI AGENT
+        ===================================================== */
+
+        .agent-intro {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f9ff,
+                    #f0fbf8
+                );
+
+            border:
+                1px solid
+                #e0ebf3;
+
+            padding: 16px 18px;
+
+            border-radius: 12px;
+
+            margin-bottom: 20px;
+
+            font-size: 12px;
+
+            color: #63728a;
+
+            line-height: 1.7;
+        }
+
+
+        .agent-input-area {
+
+            display: flex;
+
+            gap: 12px;
+        }
+
+
+        #agentTask {
+
+            flex: 1;
+
+            min-height: 58px;
+
+            resize: vertical;
+
+            border:
+                1px solid
+                #dce4ed;
+
+            border-radius: 12px;
+
+            padding: 17px;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            outline: none;
+
+            color: #243147;
+
+            background: #fafbfd;
+        }
+
+
+        #agentTask:focus {
+
+            border-color: #338ea0;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(51,142,160,0.07);
+        }
+
+
+        .ask-button {
+
+            align-self: stretch;
+
+            min-width: 135px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1767aa,
+                    #168d86
+                );
+
+            color: white;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .ask-button:hover {
+
+            transform:
+                translateY(-1px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(22,104,153,0.18);
+        }
+
+
+        .example-questions {
+
+            margin-top: 14px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .example-question {
+
+            border:
+                1px solid
+                #e0e7ef;
+
+            background: #f8fafc;
+
+            border-radius: 20px;
+
+            padding: 7px 11px;
+
+            font-size: 10px;
+
+            color: #65738a;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .example-question:hover {
+
+            background: #eef7f8;
+
+            border-color: #b8dfe1;
+        }
+
+
+        .agent-answer {
+
+            display: none;
+
+            margin-top: 22px;
+
+            border:
+                1px solid
+                #dfe7ef;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+        }
+
+
+        .answer-header {
+
+            padding: 12px 16px;
+
+            background: #f7f9fc;
+
+            border-bottom:
+                1px solid
+                #e5ebf1;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            color: #637087;
+        }
+
+
+        .answer-content {
+
+            padding: 18px;
+
+            font-size: 13px;
+
+            line-height: 1.75;
+
+            color: #26354b;
+
+            white-space: pre-wrap;
+        }
+
+
+        .sources {
+
+            padding: 13px 18px;
+
+            background: #f9fbfd;
+
+            border-top:
+                1px solid
+                #e8edf3;
+
+            font-size: 10px;
+
+            color: #738198;
+        }
+
+
+
+        /* =====================================================
+           EXECUTION TRACE
+        ===================================================== */
+
+        .trace-box {
+
+            background: #101b2d;
+
+            border-radius: 13px;
+
+            padding: 20px;
+
+            color: #dbe6f5;
+
+            font-family:
+                Consolas,
+                "Courier New",
+                monospace;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            min-height: 100px;
+
+            overflow-x: auto;
+        }
+
+
+        .trace-line {
+
+            display: block;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.04);
+
+            padding: 3px 0;
+        }
+
+
+        .trace-line::before {
+
+            content: "› ";
+
+            color: #5fe1c0;
+        }
+
+
+        .empty-trace {
+
+            color: #718098;
+
+            font-family: inherit;
+
+            font-size: 12px;
+        }
+
+
+
+        /* =====================================================
+           LOWER GRID
+        ===================================================== */
+
+        .lower-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 24px;
+        }
+
+
+
+        /* =====================================================
+           SECURITY
+        ===================================================== */
+
+        .security-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 10px;
+        }
+
+
+        .security-item {
+
+            border:
+                1px solid
+                #e7edf3;
+
+            border-radius: 11px;
+
+            padding: 13px;
+
+            background: #fafbfd;
+        }
+
+
+        .security-item-title {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            margin-bottom: 5px;
+
+            color: #35435a;
+        }
+
+
+        .security-item-value {
+
+            font-size: 10px;
+
+            color: #16806b;
+
+            font-weight: 700;
+        }
+
+
+
+        /* =====================================================
+           AUDIT
+        ===================================================== */
+
+        .audit-list {
+
+            max-height: 350px;
+
+            overflow-y: auto;
+        }
+
+
+        .audit-empty {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #8996a8;
+
+            font-size: 12px;
+        }
+
+
+        .audit-entry {
+
+            border-bottom:
+                1px solid
+                #edf1f5;
+
+            padding: 14px 2px;
+        }
+
+
+        .audit-entry:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .audit-time {
+
+            font-size: 10px;
+
+            color: #8b97a8;
+
+            margin-bottom: 5px;
+        }
+
+
+        .audit-task {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #35435a;
+
+            margin-bottom: 7px;
+        }
+
+
+        .audit-answer {
+
+            font-size: 11px;
+
+            color: #78859a;
+
+            line-height: 1.5;
+
+            max-height: 45px;
+
+            overflow: hidden;
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .login-container {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .login-left {
+
+                display: none;
+            }
+
+
+            .login-right {
+
+                padding:
+                    45px 30px;
+            }
+
+
+            .dashboard-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .sidebar {
+
+                display: none;
+            }
+
+
+            .main-content {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .lower-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .topbar {
+
+                padding: 0 15px;
+            }
+
+
+            .topbar-subtitle {
+
+                display: none;
+            }
+
+
+            .online-status {
+
+                display: none;
+            }
+
+
+            .user-info {
+
+                font-size: 11px;
+            }
+
+
+            .logout-button {
+
+                padding: 8px;
+            }
+
+
+            .main-content {
+
+                padding:
+                    20px 14px;
+            }
+
+
+            .agent-input-area {
+
+                flex-direction: column;
+            }
+
+
+            .ask-button {
+
+                min-height: 50px;
+            }
+
+
+            .security-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
+
+<section id="loginPage">
+
+
+    <div class="login-container">
+
+
+        <!-- LEFT -->
+
+        <div class="login-left">
+
+
+            <div class="brand-icon">
+                🛡️
+            </div>
+
+
+            <h1>
+
+                Sovereign
+                <span>AI</span>
+
+                <br>
+
+                Workbench
+
+            </h1>
+
+
+            <p class="login-description">
+
+                A secure on-premise environment for
+                intelligent AI agents, private enterprise
+                knowledge, and controlled automation.
+
+            </p>
+
+
+            <div class="feature-pills">
+
+
+                <div class="feature-pill">
+                    Local AI
+                </div>
+
+
+                <div class="feature-pill">
+                    Private Data
+                </div>
+
+
+                <div class="feature-pill">
+                    Agentic Workflows
+                </div>
+
+
+                <div class="feature-pill">
+                    Audit Ready
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="login-right">
+
+
+            <div class="login-box">
+
+
+                <div class="status-badge">
+
+                    <span class="status-dot"></span>
+
+                    ON-PREMISE AI ONLINE
+
+                </div>
+
+
+                <h2>
+                    Welcome back
+                </h2>
+
+
+                <p class="login-subtitle">
+
+                    Sign in to access your organization's
+                    private AI workbench.
+
+                </p>
+
+
+
+                <!-- USERNAME -->
+
+                <div class="input-group">
+
+                    <label>
+                        Username
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+
+                        <input
+                            id="username"
+                            class="login-input"
+                            type="text"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+
+                        <input
+                            id="password"
+                            class="login-input"
+                            type="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword()"
+                            id="passwordToggle"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    class="login-button"
+                    onclick="login()"
+                >
+
+                    SIGN IN
+                    &nbsp; →
+
+                </button>
+
+
+
+                <div
+                    id="loginError"
+                    class="login-error"
+                ></div>
+
+
+
+                <div class="login-features">
+
+
+                    <div class="mini-feature">
+
+                        <div class="mini-feature-icon">
+                            🧠
+                        </div>
+
+                        <span>
+                            LOCAL AI
+                        </span>
+
+                    </div>
+
+
+                    <div class="mini-feature">
+
+                        <div class="mini-feature-icon">
+                            🔐
+                        </div>
+
+                        <span>
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="mini-feature">
+
+                        <div class="mini-feature-icon">
+                            📋
+                        </div>
+
+                        <span>
+                            AUDITED
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section id="dashboard">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+
+        <div class="topbar-brand">
+
+
+            <div class="topbar-logo">
+                🛡️
+            </div>
+
+
+            <div>
+
+                <div class="topbar-title">
+                    Sovereign AI Workbench
+                </div>
+
+
+                <div class="topbar-subtitle">
+                    Secure On-Premise Agentic AI Platform
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="topbar-right">
+
+
+            <div class="online-status">
+                On-Premise AI Online
+            </div>
+
+
+            <div class="user-info">
+
+
+                <div class="user-avatar">
+                    👤
+                </div>
+
+
+                <span id="displayUsername">
+                    Admin
+                </span>
+
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <div class="dashboard-layout">
+
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================= -->
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-section">
+
+
+                <div class="sidebar-heading">
+                    Local AI Stack
+                </div>
+
+
+                <div class="system-card">
+
+
+                    <div class="system-card-title">
+
+                        <span class="side-status"></span>
+
+                        Qwen 2.5 3B
+
+                    </div>
+
+
+                    <div class="system-card-value">
+                        Local inference model
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="system-card">
+
+
+                    <div class="system-card-title">
+
+                        <span class="side-status"></span>
+
+                        Nomic Embed Text
+
+                    </div>
+
+
+                    <div class="system-card-value">
+                        Local embeddings
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="system-card">
+
+
+                    <div class="system-card-title">
+
+                        <span class="side-status"></span>
+
+                        ChromaDB
+
+                    </div>
+
+
+                    <div class="system-card-value">
+                        Private vector database
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="sidebar-section">
+
+
+                <div class="sidebar-heading">
+                    Environment
+                </div>
+
+
+                <div class="privacy-box">
+
+
+                    <strong>
+                        🔐 Private / On-Premise
+                    </strong>
+
+
+                    <p>
+
+                        AI inference, embeddings,
+                        document retrieval and
+                        data storage remain inside
+                        the local environment.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+        ================================================= -->
+
+        <main class="main-content">
+
+
+            <div class="welcome-section">
+
+
+                <h1>
+                    AI Agent Workspace
+                </h1>
+
+
+                <p>
+
+                    Upload private knowledge, ask your agent,
+                    and observe every execution step.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 1. PDF UPLOAD
+            ================================================= -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-card-header">
+
+
+                    <div class="card-title">
+
+
+                        <div class="card-icon">
+                            📄
+                        </div>
+
+
+                        <div>
+
+
+                            <h2>
+                                Private Knowledge Base
+                            </h2>
+
+
+                            <p>
+                                Upload confidential documents
+                                for local RAG retrieval.
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-badge">
+                        Local RAG
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <div
+                        class="upload-area"
+                        onclick="
+                            document
+                            .getElementById('fileInput')
+                            .click()
+                        "
+                    >
+
+
+                        <div class="upload-icon">
+                            📤
+                        </div>
+
+
+                        <h3>
+                            Upload a private PDF
+                        </h3>
+
+
+                        <p>
+
+                            Your document stays inside the
+                            local environment and is indexed
+                            into ChromaDB.
+
+                        </p>
+
+
+                        <label
+                            class="choose-file-button"
+                            onclick="
+                                event.stopPropagation()
+                            "
+                        >
+
+                            Choose PDF
+
+
+                            <input
+                                id="fileInput"
+                                type="file"
+                                accept=".pdf"
+                                onchange="uploadDocument()"
+                            >
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <div
+                        id="uploadResult"
+                        class="upload-result"
+                    ></div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 2. AI AGENT
+            ================================================= -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-card-header">
+
+
+                    <div class="card-title">
+
+
+                        <div class="card-icon">
+                            🤖
+                        </div>
+
+
+                        <div>
+
+
+                            <h2>
+                                AI Agent
+                            </h2>
+
+
+                            <p>
+                                Ask questions or give the agent
+                                a task.
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-badge">
+                        Agentic AI
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <div class="agent-intro">
+
+
+                        <strong>
+                            How it works:
+                        </strong>
+
+
+                        The agent determines the appropriate
+                        action, searches the private knowledge
+                        base when required, uses tools such as
+                        the calculator, and generates the final
+                        response using the local Qwen model.
+
+
+                    </div>
+
+
+
+                    <div class="agent-input-area">
+
+
+                        <textarea
+                            id="agentTask"
+                            placeholder="
+Ask your private AI agent something...
+"
+                        ></textarea>
+
+
+                        <button
+                            class="ask-button"
+                            onclick="askAgent()"
+                        >
+
+                            RUN AGENT
+                            <br>
+                            →
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div class="example-questions">
+
+
+                        <button
+                            class="example-question"
+                            onclick="
+                                setQuestion(
+                                    'How many days can employees work remotely?'
+                                )
+                            "
+                        >
+                            Remote work policy
+                        </button>
+
+
+                        <button
+                            class="example-question"
+                            onclick="
+                                setQuestion(
+                                    'What are the security requirements for remote employees?'
+                                )
+                            "
+                        >
+                            Security requirements
+                        </button>
+
+
+                        <button
+                            class="example-question"
+                            onclick="
+                                setQuestion(
+                                    'Calculate 25 * 4'
+                                )
+                            "
+                        >
+                            Calculate 25 × 4
+                        </button>
+
+
+                        <button
+                            class="example-question"
+                            onclick="
+                                setQuestion(
+                                    'What is the capital of France?'
+                                )
+                            "
+                        >
+                            Test knowledge boundary
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ANSWER -->
+
+                    <div
+                        id="agentAnswer"
+                        class="agent-answer"
+                    >
+
+
+                        <div class="answer-header">
+                            🤖 AGENT RESPONSE
+                        </div>
+
+
+                        <div
+                            id="answerContent"
+                            class="answer-content"
+                        ></div>
+
+
+                        <div
+                            id="sources"
+                            class="sources"
+                        ></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 3. EXECUTION TRACE
+            ================================================= -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-card-header">
+
+
+                    <div class="card-title">
+
+
+                        <div class="card-icon">
+                            🔎
+                        </div>
+
+
+                        <div>
+
+
+                            <h2>
+                                Agent Execution Trace
+                            </h2>
+
+
+                            <p>
+                                Transparent view of the agent's
+                                decision and tool execution.
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="card-badge">
+                        Transparent
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <div
+                        id="traceBox"
+                        class="trace-box"
+                    >
+
+                        <span class="empty-trace">
+
+                            Run an agent task to see its
+                            execution trace...
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 4 + 5. SECURITY AND AUDIT
+            ================================================= -->
+
+            <div class="lower-grid">
+
+
+
+                <!-- SECURITY -->
+
+                <div class="feature-card">
+
+
+                    <div class="feature-card-header">
+
+
+                        <div class="card-title">
+
+
+                            <div class="card-icon">
+                                🔐
+                            </div>
+
+
+                            <div>
+
+
+                                <h2>
+                                    Security & Privacy
+                                </h2>
+
+
+                                <p>
+                                    Local infrastructure status.
+                                </p>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="card-body">
+
+
+                        <div class="security-grid">
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    AI Inference
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● LOCAL — Qwen 2.5 3B
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Embeddings
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● LOCAL — Nomic
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Vector Database
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● LOCAL — ChromaDB
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Data Storage
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● PRIVATE — Local
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    External AI API
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● NOT CONFIGURED
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Authentication
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● ACTIVE
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Audit Logging
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● ENABLED
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-item">
+
+                                <div class="security-item-title">
+                                    Environment
+                                </div>
+
+                                <div class="security-item-value">
+                                    ● ON-PREMISE
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- AUDIT -->
+
+                <div class="feature-card">
+
+
+                    <div class="feature-card-header">
+
+
+                        <div class="card-title">
+
+
+                            <div class="card-icon">
+                                📋
+                            </div>
+
+
+                            <div>
+
+
+                                <h2>
+                                    Recent Agent Activity
+                                </h2>
+
+
+                                <p>
+                                    Locally stored execution history.
+                                </p>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="card-badge">
+                            Audit
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="card-body">
+
+
+                        <div
+                            id="auditList"
+                            class="audit-list"
+                        >
+
+                            <div class="audit-empty">
+
+                                Loading audit activity...
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+
+
+/* =========================================================
+   API
+========================================================= */
+
+const API_BASE =
+    "http://127.0.0.1:8000";
+
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+async function login() {
+
+
+    const username =
+        document
+        .getElementById("username")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    const errorBox =
+        document
+        .getElementById("loginError");
+
+
+    errorBox.style.display =
+        "none";
+
+
+    if (!username || !password) {
+
+
+        errorBox.innerText =
+            "⚠️ Please enter your username and password.";
+
+
+        errorBox.style.display =
+            "block";
+
+
+        return;
+
+    }
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+
+                `${API_BASE}/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
+
+                {
+                    method: "POST"
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+
+        if (!response.ok) {
+
+
+            throw new Error(
+
+                data.detail ||
+                "Invalid username or password."
+
+            );
+
+        }
+
+
+
+        if (data.success) {
+
+
+            /*
+             IMPORTANT:
+
+             We do NOT save login status
+             in localStorage.
+
+             Therefore every time the
+             page is opened or refreshed,
+             login will be required again.
+            */
+
+
+            sessionStorage.setItem(
+                "sovereign_current_user",
+                data.username
+            );
+
+
+            showDashboard();
+
+        }
+
+
+    }
+
+
+    catch (error) {
+
+
+        errorBox.innerText =
+            "❌ " +
+            (
+                error.message ||
+                "Login failed."
+            );
+
+
+        errorBox.style.display =
+            "block";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+function togglePassword() {
+
+
+    const password =
+        document
+        .getElementById("password");
+
+
+    const toggle =
+        document
+        .getElementById("passwordToggle");
+
+
+
+    if (
+        password.type ===
+        "password"
+    ) {
+
+
+        password.type =
+            "text";
+
+
+        toggle.innerText =
+            "🙈";
+
+
+    }
+
+
+    else {
+
+
+        password.type =
+            "password";
+
+
+        toggle.innerText =
+            "👁";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ENTER TO LOGIN
+========================================================= */
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key ===
+                "Enter"
+            ) {
+
+                login();
+
+            }
+
+        }
+    );
+
+
+
+/* =========================================================
+   SHOW DASHBOARD
+========================================================= */
+
+function showDashboard() {
+
+
+    document
+        .getElementById("loginPage")
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById("dashboard")
+        .style.display =
+        "block";
+
+
+    const username =
+        sessionStorage.getItem(
+            "sovereign_current_user"
+        );
+
+
+    if (username) {
+
+
+        document
+            .getElementById("displayUsername")
+            .innerText =
+            username;
+
+    }
+
+
+    loadAudit();
+
+}
+
+
+
+/* =========================================================
+   SHOW LOGIN
+========================================================= */
+
+function showLogin() {
+
+
+    document
+        .getElementById("loginPage")
+        .style.display =
+        "flex";
+
+
+    document
+        .getElementById("dashboard")
+        .style.display =
+        "none";
+
+}
+
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout() {
+
+
+    sessionStorage.removeItem(
+        "sovereign_current_user"
+    );
+
+
+    document
+        .getElementById("username")
+        .value =
+        "";
+
+
+    document
+        .getElementById("password")
+        .value =
+        "";
+
+
+    document
+        .getElementById("password")
+        .type =
+        "password";
+
+
+    document
+        .getElementById("passwordToggle")
+        .innerText =
+        "👁";
+
+
+    document
+        .getElementById("loginError")
+        .style.display =
+        "none";
+
+
+    showLogin();
+
+}
+
+
+
+/* =========================================================
+   CHECK LOGIN
+
+   IMPORTANT:
+
+   We intentionally DO NOT check
+   localStorage here.
+
+   Every page load starts at
+   the login screen.
+========================================================= */
+
+function checkLogin() {
+
+
+    /*
+       Clear any previous login state.
+       This guarantees that refreshing
+       or reopening the HTML requires
+       authentication again.
+    */
+
+
+    sessionStorage.removeItem(
+        "sovereign_current_user"
+    );
+
+
+    showLogin();
+
+}
+
+
+
+/* =========================================================
+   PDF UPLOAD
+========================================================= */
+
+async function uploadDocument() {
+
+
+    const input =
+        document
+        .getElementById("fileInput");
+
+
+    const resultBox =
+        document
+        .getElementById("uploadResult");
+
+
+    if (
+        !input.files.length
+    ) {
+
+        return;
+
+    }
+
+
+    const file =
+        input.files[0];
+
+
+
+    if (
+        !file.name
+        .toLowerCase()
+        .endsWith(".pdf")
+    ) {
+
+
+        resultBox.className =
+            "upload-result upload-error";
+
+
+        resultBox.innerText =
+            "❌ Only PDF files are supported.";
+
+
+        resultBox.style.display =
+            "block";
+
+
+        return;
+
+    }
+
+
+
+    resultBox.className =
+        "upload-result";
+
+
+    resultBox.style.display =
+        "block";
+
+
+    resultBox.innerText =
+        "⏳ Uploading and indexing document...";
+
+
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "file",
+        file
+    );
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+
+                `${API_BASE}/documents/upload`,
+
+                {
+                    method: "POST",
+
+                    body: formData
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+
+        if (!response.ok) {
+
+
+            throw new Error(
+
+                data.detail ||
+                data.error ||
+                "Upload failed."
+
+            );
+
+        }
+
+
+
+        if (data.error) {
+
+
+            throw new Error(
+                data.error
+            );
+
+        }
+
+
+
+        resultBox.className =
+            "upload-result upload-success";
+
+
+        resultBox.innerHTML =
+
+            `
+            <strong>
+                ✅ Document indexed successfully
+            </strong>
+
+            <br>
+
+            📄 ${escapeHtml(data.filename)}
+
+            <br>
+
+            📑 Pages: ${data.pages}
+            &nbsp; • &nbsp;
+            🧩 Chunks: ${data.chunks}
+
+            <br>
+
+            <small>
+                The document is now available to the
+                private AI agent through local RAG.
+            </small>
+            `;
+
+
+        loadAudit();
+
+    }
+
+
+    catch (error) {
+
+
+        resultBox.className =
+            "upload-result upload-error";
+
+
+        resultBox.innerText =
+            "❌ " +
+            (
+                error.message ||
+                "Document upload failed."
+            );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ASK AGENT
+========================================================= */
+
+async function askAgent() {
+
+
+    const taskInput =
+        document
+        .getElementById("agentTask");
+
+
+    const task =
+        taskInput
+        .value
+        .trim();
+
+
+
+    if (!task) {
+
+
+        alert(
+            "Please enter a question or task."
+        );
+
+
+        return;
+
+    }
+
+
+
+    const answerBox =
+        document
+        .getElementById("agentAnswer");
+
+
+    const answerContent =
+        document
+        .getElementById("answerContent");
+
+
+    const sources =
+        document
+        .getElementById("sources");
+
+
+    const traceBox =
+        document
+        .getElementById("traceBox");
+
+
+
+    answerBox.style.display =
+        "block";
+
+
+    answerContent.innerText =
+        "⏳ Agent is working...";
+
+
+    sources.innerText =
+        "";
+
+
+    traceBox.innerHTML =
+
+        `
+        <span class="trace-line">
+            Task submitted to local agent...
+        </span>
+        `;
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+
+                `${API_BASE}/agent?task=${encodeURIComponent(task)}`
+
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        if (!response.ok) {
+
+
+            throw new Error(
+
+                data.detail ||
+                "Agent request failed."
+
+            );
+
+        }
+
+
+
+        const result =
+            data.agent_result ||
+            {};
+
+
+
+        /* ANSWER */
+
+        answerContent.innerText =
+            result.answer ||
+            "No answer returned.";
+
+
+
+        /* SOURCES */
+
+        const sourceList =
+            result.sources ||
+            [];
+
+
+        if (
+            sourceList.length > 0
+        ) {
+
+
+            sources.innerHTML =
+
+                `
+                <strong>
+                    📚 Sources:
+                </strong>
+
+                ${
+                    sourceList
+                    .map(
+                        source =>
+                            escapeHtml(source)
+                    )
+                    .join(", ")
+                }
+                `;
+
+        }
+
+
+        else {
+
+
+            sources.innerText =
+                "📚 Sources: None";
+
+        }
+
+
+
+        /* TRACE */
+
+        const trace =
+            result.trace ||
+            [];
+
+
+        if (
+            trace.length > 0
+        ) {
+
+
+            traceBox.innerHTML =
+
+                trace
+                .map(
+
+                    line =>
+
+                        `
+                        <span class="trace-line">
+                            ${escapeHtml(line)}
+                        </span>
+                        `
+
+                )
+                .join("");
+
+        }
+
+
+        else {
+
+
+            traceBox.innerHTML =
+
+                `
+                <span class="empty-trace">
+                    No execution trace available.
+                </span>
+                `;
+
+        }
+
+
+
+        loadAudit();
+
+    }
+
+
+    catch (error) {
+
+
+        answerContent.innerText =
+            "❌ " +
+            (
+                error.message ||
+                "Could not connect to the AI agent."
+            );
+
+
+        sources.innerText =
+            "";
+
+
+        traceBox.innerHTML =
+
+            `
+            <span class="trace-line">
+                Agent request failed
+            </span>
+
+            <span class="trace-line">
+                ${escapeHtml(
+                    error.message ||
+                    "Unknown error"
+                )}
+            </span>
+            `;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   EXAMPLE QUESTION
+========================================================= */
+
+function setQuestion(question) {
+
+
+    document
+        .getElementById("agentTask")
+        .value =
+        question;
+
+
+    document
+        .getElementById("agentTask")
+        .focus();
+
+}
+
+
+
+/* =========================================================
+   LOAD AUDIT
+========================================================= */
+
+async function loadAudit() {
+
+
+    const auditList =
+        document
+        .getElementById("auditList");
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                `${API_BASE}/audit`
+            );
+
+
+        if (!response.ok) {
+
+
+            throw new Error(
+                "Could not load audit log."
+            );
+
+        }
+
+
+
+        const data =
+            await response.json();
+
+
+        const logs =
+            data.logs ||
+            [];
+
+
+
+        if (
+            logs.length === 0
+        ) {
+
+
+            auditList.innerHTML =
+
+                `
+                <div class="audit-empty">
+                    No agent activity recorded yet.
+                </div>
+                `;
+
+
+            return;
+
+        }
+
+
+
+        auditList.innerHTML =
+
+            logs
+            .slice()
+            .reverse()
+            .map(
+
+                entry =>
+
+                    `
+                    <div class="audit-entry">
+
+
+                        <div class="audit-time">
+
+                            🕒
+                            ${escapeHtml(
+                                entry.timestamp ||
+                                "Unknown time"
+                            )}
+
+                        </div>
+
+
+                        <div class="audit-task">
+
+                            ${escapeHtml(
+                                entry.task ||
+                                "Unknown task"
+                            )}
+
+                        </div>
+
+
+                        <div class="audit-answer">
+
+                            ${escapeHtml(
+                                entry.answer ||
+                                "No answer"
+                            )}
+
+                        </div>
+
+
+                    </div>
+                    `
+
+            )
+            .join("");
+
+    }
+
+
+    catch (error) {
+
+
+        auditList.innerHTML =
+
+            `
+            <div class="audit-empty">
+
+                Audit log unavailable.
+
+            </div>
+            `;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value) {
+
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        String(value);
+
+
+    return div.innerHTML;
+
+}
+
+
+
+/* =========================================================
+   START APPLICATION
+========================================================= */
+
+checkLogin();
+
+
+</script>
+
+
+</body>
+
+</html>
