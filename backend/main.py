@@ -226,6 +226,40 @@ async def upload_document(
             result["chunks"]
     }
 
+# =========================================
+# DOCUMENT LIST
+# =========================================
+
+@app.get("/documents")
+def documents():
+
+    files = []
+
+    for filename in os.listdir(DOCUMENT_FOLDER):
+
+        file_path = os.path.join(
+            DOCUMENT_FOLDER,
+            filename
+        )
+
+        if os.path.isfile(file_path):
+
+            extension = os.path.splitext(
+                filename
+            )[1].lower()
+
+            if extension in [".pdf", ".txt"]:
+
+                files.append({
+                    "filename": filename,
+                    "type": extension.replace(".", "").upper(),
+                    "size": os.path.getsize(file_path)
+                })
+
+    return {
+        "documents": files
+    }
+
 
 # =========================================
 # SECURITY STATUS
@@ -294,7 +328,53 @@ def security_status():
         }
     }
 
+# =========================================
+# SYSTEM EVALUATION
+# =========================================
 
+@app.get("/evaluation")
+def evaluation():
+
+    logs = read_audit(1000)
+
+    total_tasks = len(logs)
+
+    successful_tasks = 0
+    policy_checks = 0
+    rag_tasks = 0
+
+    for log in logs:
+
+        trace = log.get("trace", [])
+
+        if "Final answer generated" in trace:
+            successful_tasks += 1
+
+        if "Agent identified a policy/compliance task" in trace:
+            policy_checks += 1
+
+        if "Searching private knowledge base" in trace:
+            rag_tasks += 1
+
+    success_rate = 0
+
+    if total_tasks > 0:
+        success_rate = round(
+            (successful_tasks / total_tasks) * 100,
+            1
+        )
+
+    return {
+        "total_tasks": total_tasks,
+        "successful_tasks": successful_tasks,
+        "success_rate_percent": success_rate,
+        "policy_checks": policy_checks,
+        "rag_tasks": rag_tasks,
+        "external_ai_api": "NOT CONFIGURED",
+        "inference": "LOCAL",
+        "embeddings": "LOCAL",
+        "vector_database": "LOCAL"
+    }
 # =========================================
 # AUDIT LOG
 # =========================================
@@ -304,4 +384,37 @@ def audit():
 
     return {
         "logs": read_audit(20)
+    }
+
+    # =========================================
+# PRIVATE DOCUMENTS
+# =========================================
+
+@app.get("/documents")
+def list_documents():
+
+    documents = []
+
+    if not os.path.exists(DOCUMENT_FOLDER):
+        return {
+            "documents": []
+        }
+
+    for filename in os.listdir(DOCUMENT_FOLDER):
+
+        file_path = os.path.join(
+            DOCUMENT_FOLDER,
+            filename
+        )
+
+        if os.path.isfile(file_path):
+
+            documents.append({
+                "filename": filename,
+                "type": os.path.splitext(filename)[1].replace(".", "").upper(),
+                "size": os.path.getsize(file_path)
+            })
+
+    return {
+        "documents": documents
     }

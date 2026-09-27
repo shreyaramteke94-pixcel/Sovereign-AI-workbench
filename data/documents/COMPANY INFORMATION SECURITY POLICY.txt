@@ -1,0 +1,25 @@
+COMPANY INFORMATION SECURITY POLICY 
+1. Password Security 
+ 
+Employees must use strong passwords for all company accounts. Passwords must not 
+be shared with other employees. 
+ 
+2. Company Devices 
+ 
+Employees must use organization-approved devices when accessing confidential 
+company information. 
+ 
+3. Data Protection 
+ 
+Confidential company information must not be copied to personal cloud storage or 
+personal devices. 
+ 
+4. Security Incidents 
+ 
+Employees must report suspected security incidents to the IT security team as soon as 
+possible. 
+ 
+5. External Sharing 
+ 
+Confidential company documents must not be shared with external individuals or 
+organizations without authorization from the department head. 

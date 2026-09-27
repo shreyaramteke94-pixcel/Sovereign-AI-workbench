@@ -9,7 +9,6 @@
 
     <title>Sovereign AI Workbench</title>
 
-
     <style>
         * {
             box-sizing: border-box;
@@ -17,35 +16,23 @@
             padding: 0;
         }
 
-
         body {
-
-            font-family:
-                Arial,
-                sans-serif;
-
+            font-family: Arial, sans-serif;
             background: #f4f6f8;
-
             color: #1f2937;
         }
 
-
-        /* ==============================
+        /* =========================================
            HEADER
-        ============================== */
+        ========================================= */
 
         header {
-
             height: 70px;
-
             background: #111827;
-
             color: white;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
 
             padding: 0 30px;
@@ -54,214 +41,142 @@
                 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
-
         .logo {
-
             font-size: 22px;
-
             font-weight: bold;
         }
 
-
         .subtitle {
-
             font-size: 12px;
-
             color: #9ca3af;
-
             margin-top: 4px;
         }
 
-
         .online {
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
             font-size: 13px;
         }
 
-
         .online-dot {
-
             width: 10px;
-
             height: 10px;
-
             border-radius: 50%;
-
             background: #22c55e;
         }
 
-
-        /* ==============================
-           MAIN LAYOUT
-        ============================== */
+        /* =========================================
+           LAYOUT
+        ========================================= */
 
         .layout {
-
             display: flex;
-
-            min-height:
-                calc(100vh - 70px);
+            min-height: calc(100vh - 70px);
         }
-
-
-        /* ==============================
-           SIDEBAR
-        ============================== */
 
         .sidebar {
-
-            width: 280px;
-
+            width: 250px;
             background: white;
-
-            border-right:
-                1px solid #e5e7eb;
-
-            padding: 24px;
+            border-right: 1px solid #e5e7eb;
+            padding: 22px;
         }
 
-
         .sidebar-title {
-
             font-size: 14px;
-
             font-weight: bold;
-
             margin-bottom: 16px;
         }
 
-
         .status-card {
-
-            border:
-                1px solid #e5e7eb;
-
+            border: 1px solid #e5e7eb;
             border-radius: 10px;
-
-            padding: 14px;
-
+            padding: 13px;
             margin-bottom: 12px;
-
             background: #fafafa;
         }
 
-
         .status-card-title {
-
-            font-size: 12px;
-
+            font-size: 11px;
             color: #6b7280;
-
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
-
         .status-card-value {
-
             font-size: 14px;
-
             font-weight: bold;
         }
 
-
         .status-good {
-
             color: #16a34a;
-
+            font-size: 12px;
             margin-top: 4px;
         }
 
-
-        /* ==============================
-           CONTENT
-        ============================== */
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
 
         .content {
-
             flex: 1;
-
             padding: 28px;
-
             overflow-y: auto;
         }
 
-
         .page-title {
-
             font-size: 25px;
-
             font-weight: bold;
         }
 
-
         .page-description {
-
             margin-top: 6px;
-
             color: #6b7280;
-
             font-size: 14px;
         }
 
-
-        /* ==============================
+        /* =========================================
            CARDS
-        ============================== */
+        ========================================= */
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.04);
+
+            margin-top: 20px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
 
         .grid {
-
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit,
-                    minmax(260px, 1fr));
+                repeat(auto-fit, minmax(280px, 1fr));
 
             gap: 18px;
 
-            margin-top: 24px;
+            margin-top: 22px;
         }
 
-
-        .card {
-
-            background: white;
-
-            border:
-                1px solid #e5e7eb;
-
-            border-radius: 12px;
-
-            padding: 20px;
-
-            box-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.04);
+        .grid .card {
+            margin-top: 0;
         }
 
-
-        .card h3 {
-
-            font-size: 16px;
-
-            margin-bottom: 14px;
-        }
-
-
-        /* ==============================
+        /* =========================================
            SECURITY
-        ============================== */
+        ========================================= */
 
         .security-item {
-
             display: flex;
-
-            justify-content:
-                space-between;
+            justify-content: space-between;
+            align-items: center;
 
             padding: 10px 0;
 
@@ -271,84 +186,174 @@
             font-size: 13px;
         }
 
-
         .security-item:last-child {
-
             border-bottom: none;
         }
 
-
         .badge {
-
             padding: 4px 8px;
-
             border-radius: 20px;
-
-            font-size: 11px;
-
+            font-size: 10px;
             font-weight: bold;
-
             background: #dcfce7;
-
             color: #166534;
         }
 
-
-        /* ==============================
+        /* =========================================
            UPLOAD
-        ============================== */
+        ========================================= */
 
         .upload-box {
-
-            border:
-                2px dashed #d1d5db;
-
+            border: 2px dashed #d1d5db;
             border-radius: 10px;
-
             padding: 22px;
-
             text-align: center;
-
-            margin-top: 10px;
+            margin-top: 15px;
         }
-
 
         .upload-box input {
-
-            margin-top: 12px;
+            margin-bottom: 12px;
         }
 
-
-        .upload-result {
-
+        .upload-message {
             margin-top: 12px;
-
             font-size: 13px;
-
             color: #166534;
         }
 
+        /* =========================================
+           DOCUMENT LIST
+        ========================================= */
 
-        /* ==============================
-           CHAT
-        ============================== */
-
-        .chat-box {
-
-            margin-top: 24px;
+        .document-list {
+            margin-top: 15px;
         }
 
+        .document-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+
+            padding: 12px;
+
+            margin-bottom: 9px;
+
+            background: #fafafa;
+        }
+
+        .document-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .document-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            border-radius: 8px;
+        }
+
+        .document-name {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .document-meta {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+
+        .indexed {
+            background: #dcfce7;
+            color: #166534;
+
+            padding: 5px 8px;
+
+            border-radius: 15px;
+
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .empty-state {
+            color: #9ca3af;
+            font-size: 13px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .button {
+            margin-top: 10px;
+
+            background: #111827;
+            color: white;
+
+            border: none;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #374151;
+        }
+
+        .button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .refresh-button {
+            float: right;
+
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+
+            padding: 7px 11px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+        }
+
+        /* =========================================
+           AGENT WORKSPACE
+        ========================================= */
+
+        .chat-box {
+            margin-top: 20px;
+        }
 
         textarea {
-
             width: 100%;
 
             min-height: 100px;
 
             resize: vertical;
 
-            border:
-                1px solid #d1d5db;
+            border: 1px solid #d1d5db;
 
             border-radius: 10px;
 
@@ -359,265 +364,217 @@
             outline: none;
         }
 
-
         textarea:focus {
-
             border-color: #111827;
         }
 
-
-        .button {
-
-            margin-top: 12px;
-
-            background: #111827;
-
-            color: white;
-
-            border: none;
-
-            padding: 11px 20px;
-
-            border-radius: 8px;
-
-            cursor: pointer;
-
-            font-size: 13px;
-
-            font-weight: bold;
-        }
-
-
-        .button:hover {
-
-            background: #374151;
-        }
-
-
-        .button:disabled {
-
-            background: #9ca3af;
-
-            cursor: not-allowed;
-        }
-
-
-        /* ==============================
+        /* =========================================
            ANSWER
-        ============================== */
+        ========================================= */
 
         .answer-box {
-
             margin-top: 18px;
 
-            background: white;
+            background: #eff6ff;
 
-            border:
-                1px solid #e5e7eb;
+            border: 1px solid #bfdbfe;
 
-            border-radius: 12px;
+            border-radius: 10px;
 
-            padding: 20px;
-
-            display: none;
+            padding: 15px;
         }
 
-
         .answer-title {
+            color: #1d4ed8;
 
-            font-size: 13px;
+            font-size: 11px;
 
             font-weight: bold;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+
+            text-transform: uppercase;
         }
 
-
         .answer {
-
             line-height: 1.6;
 
             white-space: pre-wrap;
 
-            font-size: 14px;
+            font-size: 13px;
         }
 
+        /* =========================================
+           TRACE + SOURCES
+        ========================================= */
 
-        /* ==============================
-           TRACE
-        ============================== */
+        .trace-source-grid {
+            display: grid;
 
-        .trace-box {
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
 
             margin-top: 18px;
+        }
 
+        .trace-card,
+        .source-card {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 15px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .section-description {
+            font-size: 11px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .trace {
             background: #111827;
 
             color: #d1fae5;
 
-            border-radius: 12px;
+            border-radius: 9px;
 
-            padding: 18px;
+            padding: 14px;
 
-            display: none;
-        }
-
-
-        .trace-title {
-
-            color: white;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            margin-bottom: 12px;
-        }
-
-
-        .trace-line {
-
-            font-family:
-                Consolas,
-                monospace;
-
-            font-size: 12px;
-
-            margin-bottom: 7px;
-        }
-
-
-        /* ==============================
-           SOURCES / EVIDENCE
-        ============================== */
-
-        .sources-box {
-
-            margin-top: 18px;
-
-            background: #f8fafc;
-
-            border:
-                1px solid #dbeafe;
-
-            border-radius: 12px;
-
-            padding: 18px;
-
-            display: none;
-        }
-
-
-        .sources-title {
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            margin-bottom: 10px;
-
-            color: #1e3a8a;
-        }
-
-
-        .source-item {
-
-            display: inline-block;
-
-            background: white;
-
-            border:
-                1px solid #bfdbfe;
-
-            border-radius: 6px;
-
-            padding: 6px 10px;
-
-            margin: 4px;
-
-            font-size: 12px;
-
-            color: #1e40af;
-        }
-
-
-        /* ==============================
-           AUDIT
-        ============================== */
-
-        .audit-container {
-
-            max-height: 300px;
+            max-height: 230px;
 
             overflow-y: auto;
         }
 
+        .trace-step {
+            font-family: Consolas, monospace;
 
-        .audit-entry {
+            font-size: 11px;
 
+            margin-bottom: 8px;
+        }
+
+        .source-item {
+            border: 1px solid #e5e7eb;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+            background: #fafafa;
+        }
+
+        .no-source {
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        /* =========================================
+           AUDIT
+        ========================================= */
+
+        .audit-list {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .audit-item {
             border-bottom:
                 1px solid #e5e7eb;
 
             padding: 12px 0;
         }
 
-
-        .audit-time {
-
-            font-size: 11px;
-
-            color: #6b7280;
-
-            margin-bottom: 5px;
+        .audit-item:last-child {
+            border-bottom: none;
         }
 
-
         .audit-task {
-
             font-size: 13px;
-
             font-weight: bold;
         }
 
+        .audit-time {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
 
         .audit-answer {
-
-            margin-top: 5px;
-
             font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
 
+        /* =========================================
+           EVALUATION
+        ========================================= */
+
+        .evaluation-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+        .metric {
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            background: #fafafa;
+        }
+
+        .metric-label {
+            font-size: 11px;
             color: #6b7280;
         }
 
-
-        .empty {
-
-            color: #9ca3af;
-
-            font-size: 13px;
+        .metric-value {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 7px;
         }
 
-
-        /* ==============================
+        /* =========================================
            RESPONSIVE
-        ============================== */
+        ========================================= */
 
-        @media(max-width: 800px) {
+        @media(max-width: 900px) {
 
             .sidebar {
-
                 display: none;
             }
 
+            .trace-source-grid {
+                grid-template-columns: 1fr;
+            }
 
             .content {
-
                 padding: 18px;
             }
 
-
             header {
-
                 padding: 0 18px;
             }
 
@@ -630,9 +587,9 @@
 <body>
 
 
-    <!-- =====================================
+    <!-- =========================================
      HEADER
-===================================== -->
+========================================= -->
 
     <header>
 
@@ -662,17 +619,16 @@
     </header>
 
 
-
-    <!-- =====================================
-     MAIN LAYOUT
-===================================== -->
+    <!-- =========================================
+     MAIN
+========================================= -->
 
     <div class="layout">
 
 
-        <!-- =================================
+        <!-- =====================================
          SIDEBAR
-    ================================== -->
+    ====================================== -->
 
         <aside class="sidebar">
 
@@ -692,7 +648,7 @@
                 </div>
 
                 <div class="status-good">
-                    ● Local
+                    ● LOCAL
                 </div>
 
             </div>
@@ -709,7 +665,7 @@
                 </div>
 
                 <div class="status-good">
-                    ● Local
+                    ● LOCAL
                 </div>
 
             </div>
@@ -726,7 +682,7 @@
                 </div>
 
                 <div class="status-good">
-                    ● Local
+                    ● LOCAL
                 </div>
 
             </div>
@@ -735,15 +691,15 @@
             <div class="status-card">
 
                 <div class="status-card-title">
-                    DATA MODE
+                    DATA STORAGE
                 </div>
 
                 <div class="status-card-value">
-                    Private
+                    Local Filesystem
                 </div>
 
                 <div class="status-good">
-                    ● On-Premise
+                    ● PRIVATE
                 </div>
 
             </div>
@@ -752,10 +708,9 @@
         </aside>
 
 
-
-        <!-- =================================
+        <!-- =====================================
          CONTENT
-    ================================== -->
+    ====================================== -->
 
         <main class="content">
 
@@ -764,38 +719,38 @@
                 AI Control Center
             </div>
 
-
             <div class="page-description">
-
-                Enterprise AI agents operating entirely
-                within your private infrastructure.
-
+                Enterprise AI agents operating entirely within
+                your private infrastructure.
             </div>
-
 
 
             <!-- =================================
              SECURITY
         ================================== -->
 
-            <div class="grid">
+            <div class="card">
+
+                <button class="refresh-button" onclick="loadSecurityStatus()">
+                    ↻ Refresh
+                </button>
+
+                <h3>
+                    🔐 Security & Privacy
+                </h3>
 
 
-                <div class="card">
-
-                    <h3>
-                        🔐 Security & Privacy
-                    </h3>
+                <div class="grid">
 
 
                     <div class="security-item">
 
                         <span>
-                            Local AI Inference
+                            Inference
                         </span>
 
-                        <span class="badge">
-                            ACTIVE
+                        <span id="inferenceStatus" class="badge">
+                            LOADING
                         </span>
 
                     </div>
@@ -804,24 +759,11 @@
                     <div class="security-item">
 
                         <span>
-                            Local Embeddings
+                            Embeddings
                         </span>
 
-                        <span class="badge">
-                            ACTIVE
-                        </span>
-
-                    </div>
-
-
-                    <div class="security-item">
-
-                        <span>
-                            Private Vector DB
-                        </span>
-
-                        <span class="badge">
-                            ACTIVE
+                        <span id="embeddingStatus" class="badge">
+                            LOADING
                         </span>
 
                     </div>
@@ -830,11 +772,24 @@
                     <div class="security-item">
 
                         <span>
-                            Audit Logging
+                            Vector Database
                         </span>
 
-                        <span class="badge">
-                            ACTIVE
+                        <span id="vectorStatus" class="badge">
+                            LOADING
+                        </span>
+
+                    </div>
+
+
+                    <div class="security-item">
+
+                        <span>
+                            Data Storage
+                        </span>
+
+                        <span id="dataStatus" class="badge">
+                            LOADING
                         </span>
 
                     </div>
@@ -846,10 +801,99 @@
                             External AI API
                         </span>
 
-                        <span class="badge">
-                            NOT CONFIGURED
+                        <span id="externalStatus" class="badge">
+                            LOADING
                         </span>
 
+                    </div>
+
+
+                    <div class="security-item">
+
+                        <span>
+                            Audit Logging
+                        </span>
+
+                        <span id="auditStatus" class="badge">
+                            LOADING
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+             DOCUMENT UPLOAD
+        ================================== -->
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <h3>
+                        📤 Upload Private Document
+                    </h3>
+
+                    <p style="
+                    font-size:13px;
+                    color:#6b7280;
+                ">
+                        Upload a PDF to extract, embed and
+                        index it locally.
+                    </p>
+
+
+                    <div class="upload-box">
+
+                        <div>
+                            📄 Select a PDF document
+                        </div>
+
+                        <input type="file" id="pdfFile" accept=".pdf">
+
+                        <br>
+
+                        <button id="uploadButton" class="button" onclick="uploadDocument()">
+                            Upload & Index
+                        </button>
+
+                    </div>
+
+
+                    <div id="uploadMessage" class="upload-message"></div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🧠 Agent Capabilities
+                    </h3>
+
+                    <div class="security-item">
+                        <span>Private RAG</span>
+                        <span class="badge">ACTIVE</span>
+                    </div>
+
+                    <div class="security-item">
+                        <span>Calculator Tool</span>
+                        <span class="badge">ACTIVE</span>
+                    </div>
+
+                    <div class="security-item">
+                        <span>Policy Compliance</span>
+                        <span class="badge">ACTIVE</span>
+                    </div>
+
+                    <div class="security-item">
+                        <span>Audit Trail</span>
+                        <span class="badge">ACTIVE</span>
                     </div>
 
                 </div>
@@ -858,69 +902,127 @@
             </div>
 
 
-
             <!-- =================================
-             DOCUMENT + AUDIT
+             PRIVATE KNOWLEDGE BASE
         ================================== -->
 
-            <div class="grid">
+            <div class="card">
+
+                <button class="refresh-button" onclick="loadDocuments()">
+                    ↻ Refresh
+                </button>
+
+                <h3>
+                    📚 Private Knowledge Base
+                </h3>
+
+                <p style="
+                font-size:13px;
+                color:#6b7280;
+            ">
+                    Documents stored and indexed locally
+                    for private AI retrieval.
+                </p>
 
 
-                <!-- DOCUMENT UPLOAD -->
+                <div id="documentsList" class="document-list">
 
-                <div class="card">
+                    <div class="empty-state">
+                        Loading private documents...
+                    </div>
 
-                    <h3>
-                        📄 Private Knowledge Base
-                    </h3>
+                </div>
 
-
-                    <p style="
-                    font-size:13px;
-                    color:#6b7280;
-                ">
-
-                        Upload a PDF to securely index it
-                        into the local knowledge base.
-
-                    </p>
+            </div>
 
 
-                    <div class="upload-box">
+            <!-- =================================
+             AGENT WORKSPACE
+        ================================== -->
 
-                        <input type="file" id="pdfFile" accept=".pdf">
+            <div class="card chat-box">
 
-                        <br>
+                <h3>
+                    🤖 Agent Workspace
+                </h3>
+
+                <p style="
+                font-size:13px;
+                color:#6b7280;
+                margin-bottom:12px;
+            ">
+                    Give the local agent a task. It can retrieve
+                    private knowledge or use available tools.
+                </p>
 
 
-                        <button class="button" onclick="uploadPDF()">
+                <textarea id="question" placeholder="Example: Can an employee work remotely for 4 days?"></textarea>
 
-                            Upload & Index PDF
 
-                        </button>
+                <button id="agentButton" class="button" onclick="askAgent()">
+                    Run Agent
+                </button>
 
+
+                <div class="answer-box">
+
+                    <div class="answer-title">
+                        Verified Agent Response
+                    </div>
+
+                    <div id="answer" class="answer">
+                        Enter a task and run the agent.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+             TRACE + SOURCES
+        ================================== -->
+
+            <div class="trace-source-grid">
+
+
+                <div class="trace-card">
+
+                    <div class="section-title">
+                        🧠 Agent Execution Trace
+                    </div>
+
+                    <div class="section-description">
+                        Steps performed by the agent.
                     </div>
 
 
-                    <div id="uploadResult" class="upload-result"></div>
+                    <div id="trace" class="trace">
+
+                        <div class="trace-step">
+                            Waiting for agent execution...
+                        </div>
+
+                    </div>
 
                 </div>
 
 
+                <div class="source-card">
 
-                <!-- AUDIT -->
+                    <div class="section-title">
+                        📄 Private Knowledge Sources
+                    </div>
 
-                <div class="card">
-
-                    <h3>
-                        📋 Recent Agent Activity
-                    </h3>
+                    <div class="section-description">
+                        Documents used to answer the current task.
+                    </div>
 
 
-                    <div id="auditContainer" class="audit-container">
+                    <div id="sources">
 
-                        <div class="empty">
-                            Loading audit logs...
+                        <div class="no-source">
+                            No private knowledge sources used yet.
                         </div>
 
                     </div>
@@ -931,80 +1033,144 @@
             </div>
 
 
-
             <!-- =================================
-             CHAT / AGENT WORKSPACE
+             SYSTEM EVALUATION
         ================================== -->
 
-            <div class="card chat-box">
+            <div class="card">
 
-                <h3>
-                    💬 Agent Workspace
-                </h3>
-
-
-                <textarea id="question" placeholder="Ask the sovereign AI agent something..."></textarea>
-
-
-                <button id="askButton" class="button" onclick="askAgent()">
-
-                    Run Agent
-
+                <button class="refresh-button" onclick="loadEvaluation()">
+                    ↻ Refresh
                 </button>
 
+                <h3>
+                    📊 System Evaluation
+                </h3>
+
+                <p style="
+                font-size:13px;
+                color:#6b7280;
+            ">
+                    Live metrics calculated from locally stored
+                    agent activity.
+                </p>
 
 
-                <!-- =================================
-                 ANSWER
-            ================================== -->
-
-                <div id="answerBox" class="answer-box">
-
-                    <div class="answer-title">
-                        🤖 Agent Response
-                    </div>
+                <div class="evaluation-grid">
 
 
-                    <div id="answer" class="answer"></div>
+                    <div class="metric">
 
-                </div>
+                        <div class="metric-label">
+                            Total Agent Tasks
+                        </div>
 
-
-
-                <!-- =================================
-                 AGENT TRACE
-            ================================== -->
-
-                <div id="traceBox" class="trace-box">
-
-                    <div class="trace-title">
-                        🧠 Agent Execution
-                    </div>
-
-
-                    <div id="trace"></div>
-
-                </div>
-
-
-
-                <!-- =================================
-                 PRIVATE SOURCES
-            ================================== -->
-
-                <div id="sourcesBox" class="sources-box">
-
-                    <div class="sources-title">
-
-                        📄 Private Knowledge Sources
+                        <div id="totalTasks" class="metric-value">
+                            —
+                        </div>
 
                     </div>
 
 
-                    <div id="sources"></div>
+                    <div class="metric">
+
+                        <div class="metric-label">
+                            Successful Tasks
+                        </div>
+
+                        <div id="successfulTasks" class="metric-value">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-label">
+                            Success Rate
+                        </div>
+
+                        <div id="successRate" class="metric-value">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-label">
+                            Policy Checks
+                        </div>
+
+                        <div id="policyChecks" class="metric-value">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-label">
+                            RAG Tasks
+                        </div>
+
+                        <div id="ragTasks" class="metric-value">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-label">
+                            External AI API
+                        </div>
+
+                        <div id="externalAI" class="metric-value">
+                            —
+                        </div>
+
+                    </div>
+
 
                 </div>
 
+            </div>
+
+
+            <!-- =================================
+             AUDIT LOG
+        ================================== -->
+
+            <div class="card">
+
+                <button class="refresh-button" onclick="loadAudit()">
+                    ↻ Refresh
+                </button>
+
+                <h3>
+                    📋 Recent Agent Activity
+                </h3>
+
+                <p style="
+                font-size:13px;
+                color:#6b7280;
+            ">
+                    Locally stored audit records.
+                </p>
+
+
+                <div id="auditList" class="audit-list">
+
+                    <div class="empty-state">
+                        Loading audit logs...
+                    </div>
+
+                </div>
 
             </div>
 
@@ -1014,292 +1180,255 @@
     </div>
 
 
-
     <script>
 
+
+        /* =========================================
+           API
+        ========================================= */
 
         const API_URL =
             "http://127.0.0.1:8000";
 
 
+        /* =========================================
+           SECURITY STATUS
+        ========================================= */
 
-        /* ========================================
-           ASK AGENT
-        ======================================== */
-
-        async function askAgent() {
-
-
-            const question =
-                document.getElementById(
-                    "question"
-                ).value.trim();
-
-
-            if (!question) {
-
-                alert(
-                    "Please enter a question."
-                );
-
-                return;
-            }
-
-
-            const button =
-                document.getElementById(
-                    "askButton"
-                );
-
-
-            const answerBox =
-                document.getElementById(
-                    "answerBox"
-                );
-
-
-            const traceBox =
-                document.getElementById(
-                    "traceBox"
-                );
-
-
-            const answer =
-                document.getElementById(
-                    "answer"
-                );
-
-
-            const trace =
-                document.getElementById(
-                    "trace"
-                );
-
-
-            const sourcesBox =
-                document.getElementById(
-                    "sourcesBox"
-                );
-
-
-            const sources =
-                document.getElementById(
-                    "sources"
-                );
-
-
-            button.disabled = true;
-
-
-            button.innerText =
-                "Running Agent...";
-
-
-            answerBox.style.display =
-                "block";
-
-
-            traceBox.style.display =
-                "block";
-
-
-            answer.innerText =
-                "Processing your request...";
-
-
-            trace.innerHTML =
-                "";
-
-
-            sources.innerHTML =
-                "";
-
-
-            sourcesBox.style.display =
-                "none";
-
+        async function loadSecurityStatus() {
 
             try {
 
-
                 const response =
                     await fetch(
-
                         API_URL +
-                        "/agent?task=" +
-                        encodeURIComponent(
-                            question
-                        )
-
+                        "/security/status"
                     );
 
 
                 if (!response.ok) {
 
                     throw new Error(
-
-                        "Backend returned " +
-                        response.status
-
+                        "Unable to load security status."
                     );
 
                 }
-
-
-                const data =
-                    await response.json();
 
 
                 const result =
-                    data.agent_result;
+                    await response.json();
 
 
-                /* ==============================
-                   ANSWER
-                ============================== */
+                document.getElementById(
+                    "inferenceStatus"
+                ).textContent =
+                    result.inference.status;
 
-                answer.innerText =
-                    result.answer ||
-                    "No answer returned.";
 
+                document.getElementById(
+                    "embeddingStatus"
+                ).textContent =
+                    result.embeddings.status;
 
 
-                /* ==============================
-                   TRACE
-                ============================== */
+                document.getElementById(
+                    "vectorStatus"
+                ).textContent =
+                    result.vector_database.status;
 
-                trace.innerHTML =
-                    "";
 
+                document.getElementById(
+                    "dataStatus"
+                ).textContent =
+                    result.data_mode.status;
 
-                if (
 
-                    result.trace &&
-                    result.trace.length
+                document.getElementById(
+                    "externalStatus"
+                ).textContent =
+                    result.external_ai_api.status;
 
-                ) {
 
+                document.getElementById(
+                    "auditStatus"
+                ).textContent =
+                    result.audit_logging.status;
 
-                    result.trace.forEach(
 
-                        function (step) {
+            } catch (error) {
 
-
-                            const div =
-                                document.createElement(
-                                    "div"
-                                );
-
-
-                            div.className =
-                                "trace-line";
-
-
-                            div.innerText =
-                                "✓ " + step;
-
-
-                            trace.appendChild(
-                                div
-                            );
-
-                        }
-
-                    );
-
-                }
-
-
-
-                /* ==============================
-                   SOURCES / EVIDENCE
-                ============================== */
-
-                if (
-
-                    result.sources &&
-                    result.sources.length
-
-                ) {
-
-
-                    sourcesBox.style.display =
-                        "block";
-
-
-                    result.sources.forEach(
-
-                        function (source) {
-
-
-                            const div =
-                                document.createElement(
-                                    "div"
-                                );
-
-
-                            div.className =
-                                "source-item";
-
-
-                            div.innerText =
-                                "📄 " + source;
-
-
-                            sources.appendChild(
-                                div
-                            );
-
-                        }
-
-                    );
-
-                }
-
-
-                /* ==============================
-                   REFRESH AUDIT
-                ============================== */
-
-                loadAudit();
-
-
-            }
-
-
-            catch (error) {
-
-
-                answer.innerText =
-                    "Error: " +
-                    error.message;
-
-
-            }
-
-
-            finally {
-
-
-                button.disabled =
-                    false;
-
-
-                button.innerText =
-                    "Run Agent";
+                console.error(
+                    "Security status error:",
+                    error
+                );
 
             }
 
         }
 
 
+        /* =========================================
+           LOAD DOCUMENTS
+        ========================================= */
 
-        /* ========================================
-           UPLOAD PDF
-        ======================================== */
+        async function loadDocuments() {
 
-        async function uploadPDF() {
+            const list =
+                document.getElementById(
+                    "documentsList"
+                );
 
+
+            list.innerHTML = `
+
+        <div class="empty-state">
+            Loading private documents...
+        </div>
+
+    `;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        "/documents"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load documents."
+                    );
+
+                }
+
+
+                const result =
+                    await response.json();
+
+
+                const documents =
+                    result.documents || [];
+
+
+                if (
+                    documents.length === 0
+                ) {
+
+                    list.innerHTML = `
+
+                <div class="empty-state">
+                    No private documents found.
+                </div>
+
+            `;
+
+                    return;
+
+                }
+
+
+                list.innerHTML = "";
+
+
+                documents.forEach(
+                    doc => {
+
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        item.className =
+                            "document-item";
+
+
+                        const sizeKB =
+                            (
+                                doc.size / 1024
+                            ).toFixed(1);
+
+
+                        item.innerHTML = `
+
+                    <div class="document-left">
+
+                        <div class="document-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <div class="document-name">
+                                ${escapeHtml(
+                            doc.filename
+                        )}
+                            </div>
+
+                            <div class="document-meta">
+
+                                ${escapeHtml(
+                            doc.type
+                        )}
+
+                                •
+
+                                ${sizeKB} KB
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="indexed">
+                        INDEXED
+                    </div>
+
+                `;
+
+
+                        list.appendChild(
+                            item
+                        );
+
+                    }
+                );
+
+
+            } catch (error) {
+
+                list.innerHTML = `
+
+            <div class="empty-state">
+
+                Could not load private documents.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
+            </div>
+
+        `;
+
+            }
+
+        }
+
+
+        /* =========================================
+           UPLOAD DOCUMENT
+        ========================================= */
+
+        async function uploadDocument() {
 
             const fileInput =
                 document.getElementById(
@@ -1307,9 +1436,15 @@
                 );
 
 
-            const result =
+            const message =
                 document.getElementById(
-                    "uploadResult"
+                    "uploadMessage"
+                );
+
+
+            const button =
+                document.getElementById(
+                    "uploadButton"
                 );
 
 
@@ -1317,11 +1452,8 @@
                 !fileInput.files.length
             ) {
 
-
-                alert(
-                    "Please select a PDF."
-                );
-
+                message.textContent =
+                    "Please select a PDF first.";
 
                 return;
 
@@ -1342,229 +1474,620 @@
             );
 
 
-            result.innerText =
-                "Uploading and indexing...";
+            button.disabled = true;
+
+            button.textContent =
+                "Uploading...";
+
+
+            message.textContent =
+                "Uploading and indexing document locally...";
 
 
             try {
 
-
                 const response =
                     await fetch(
-
                         API_URL +
                         "/documents/upload",
-
                         {
-
                             method: "POST",
-
                             body: formData
-
                         }
-
                     );
 
 
-                const data =
+                const result =
                     await response.json();
 
 
-                if (data.error) {
+                if (!response.ok) {
 
-
-                    result.innerText =
-                        data.error;
-
-
-                    return;
+                    throw new Error(
+                        result.detail ||
+                        result.error ||
+                        "Upload failed."
+                    );
 
                 }
 
 
-                result.innerText =
-
-                    "✓ " +
-                    data.filename +
-                    " indexed successfully (" +
-                    data.chunks +
-                    " chunks).";
+                message.textContent =
+                    `✓ ${result.filename} uploaded and indexed successfully. ` +
+                    `${result.chunks} chunk(s) created.`;
 
 
-            }
+                fileInput.value = "";
 
 
-            catch (error) {
+                await loadDocuments();
 
 
-                result.innerText =
+            } catch (error) {
+
+                message.textContent =
                     "Upload failed: " +
                     error.message;
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Upload & Index";
 
             }
 
         }
 
 
+        /* =========================================
+           RUN AGENT
+        ========================================= */
 
-        /* ========================================
-           LOAD AUDIT LOGS
-        ======================================== */
+        async function askAgent() {
+
+            const questionInput =
+                document.getElementById(
+                    "question"
+                );
+
+
+            const question =
+                questionInput.value.trim();
+
+
+            const answer =
+                document.getElementById(
+                    "answer"
+                );
+
+
+            const trace =
+                document.getElementById(
+                    "trace"
+                );
+
+
+            const sources =
+                document.getElementById(
+                    "sources"
+                );
+
+
+            const button =
+                document.getElementById(
+                    "agentButton"
+                );
+
+
+            if (!question) {
+
+                answer.textContent =
+                    "Please enter a task.";
+
+                return;
+
+            }
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Running Agent...";
+
+
+            answer.textContent =
+                "Processing task with local AI...";
+
+
+            trace.innerHTML = `
+
+        <div class="trace-step">
+            Agent is processing the task...
+        </div>
+
+    `;
+
+
+            sources.innerHTML = `
+
+        <div class="no-source">
+            Searching private knowledge...
+        </div>
+
+    `;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        "/agent?task=" +
+                        encodeURIComponent(
+                            question
+                        )
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.detail ||
+                        "Agent request failed."
+                    );
+
+                }
+
+
+                const agentResult =
+                    result.agent_result || {};
+
+
+                /* ANSWER */
+
+                answer.textContent =
+                    agentResult.answer ||
+                    "No answer returned.";
+
+
+                /* TRACE */
+
+                trace.innerHTML = "";
+
+
+                const traceSteps =
+                    agentResult.trace || [];
+
+
+                if (
+                    traceSteps.length === 0
+                ) {
+
+                    trace.innerHTML = `
+
+                <div class="trace-step">
+                    No execution trace available.
+                </div>
+
+            `;
+
+                } else {
+
+                    traceSteps.forEach(
+                        step => {
+
+                            const div =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            div.className =
+                                "trace-step";
+
+
+                            div.textContent =
+                                "› " + step;
+
+
+                            trace.appendChild(
+                                div
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                /* SOURCES */
+
+                sources.innerHTML = "";
+
+
+                const sourceList =
+                    agentResult.sources || [];
+
+
+                if (
+                    sourceList.length === 0
+                ) {
+
+                    sources.innerHTML = `
+
+                <div class="no-source">
+                    No private knowledge sources used.
+                </div>
+
+            `;
+
+                } else {
+
+                    sourceList.forEach(
+                        source => {
+
+                            const div =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            div.className =
+                                "source-item";
+
+
+                            div.textContent =
+                                "📄 " + source;
+
+
+                            sources.appendChild(
+                                div
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                await loadAudit();
+
+                await loadEvaluation();
+
+
+            } catch (error) {
+
+                answer.textContent =
+                    "Agent error: " +
+                    error.message;
+
+
+                trace.innerHTML = `
+
+            <div class="trace-step">
+                Agent request failed.
+            </div>
+
+        `;
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Run Agent";
+
+            }
+
+        }
+
+
+        /* =========================================
+           LOAD AUDIT
+        ========================================= */
 
         async function loadAudit() {
 
-
-            const container =
+            const auditList =
                 document.getElementById(
-                    "auditContainer"
+                    "auditList"
                 );
 
 
             try {
 
-
                 const response =
                     await fetch(
-
                         API_URL +
                         "/audit"
-
                     );
 
 
-                const data =
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load audit logs."
+                    );
+
+                }
+
+
+                const result =
                     await response.json();
 
 
                 const logs =
-                    data.logs || [];
+                    result.logs || [];
 
 
-                if (!logs.length) {
+                if (
+                    logs.length === 0
+                ) {
 
+                    auditList.innerHTML = `
 
-                    container.innerHTML =
+                <div class="empty-state">
+                    No agent activity recorded yet.
+                </div>
 
-                        '<div class="empty">' +
-                        'No agent activity yet.' +
-                        '</div>';
-
+            `;
 
                     return;
 
                 }
 
 
-                container.innerHTML =
-                    "";
+                auditList.innerHTML = "";
 
 
                 logs
                     .slice()
                     .reverse()
                     .forEach(
+                        log => {
 
-                        function (log) {
-
-
-                            const entry =
+                            const item =
                                 document.createElement(
                                     "div"
                                 );
 
 
-                            entry.className =
-                                "audit-entry";
-
-
-                            const time =
-                                document.createElement(
-                                    "div"
-                                );
-
-
-                            time.className =
-                                "audit-time";
-
-
-                            time.innerText =
-                                log.timestamp || "";
+                            item.className =
+                                "audit-item";
 
 
                             const task =
-                                document.createElement(
-                                    "div"
+                                escapeHtml(
+                                    log.task ||
+                                    "Unknown task"
                                 );
 
 
-                            task.className =
-                                "audit-task";
-
-
-                            task.innerText =
-                                log.task || "";
-
-
-                            const answer =
-                                document.createElement(
-                                    "div"
+                            const timestamp =
+                                escapeHtml(
+                                    log.timestamp ||
+                                    ""
                                 );
 
 
-                            answer.className =
-                                "audit-answer";
+                            const logAnswer =
+                                escapeHtml(
+                                    log.answer ||
+                                    ""
+                                );
 
 
-                            answer.innerText =
-                                log.answer || "";
+                            item.innerHTML = `
+
+                        <div class="audit-task">
+                            ${task}
+                        </div>
+
+                        <div class="audit-time">
+                            ${timestamp}
+                        </div>
+
+                        <div class="audit-answer">
+                            ${logAnswer}
+                        </div>
+
+                    `;
 
 
-                            entry.appendChild(
-                                time
-                            );
-
-
-                            entry.appendChild(
-                                task
-                            );
-
-
-                            entry.appendChild(
-                                answer
-                            );
-
-
-                            container.appendChild(
-                                entry
+                            auditList.appendChild(
+                                item
                             );
 
                         }
-
                     );
 
-            }
 
+            } catch (error) {
 
-            catch (error) {
+                auditList.innerHTML = `
 
+            <div class="empty-state">
 
-                container.innerHTML =
+                Could not load audit records.
 
-                    '<div class="empty">' +
-                    'Could not load audit logs.' +
-                    '</div>';
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
+            </div>
+
+        `;
 
             }
 
         }
 
 
+        /* =========================================
+           LOAD SYSTEM EVALUATION
+        ========================================= */
 
-        /* ========================================
-           LOAD AUDIT WHEN PAGE OPENS
-        ======================================== */
+        async function loadEvaluation() {
 
-        loadAudit();
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        "/evaluation"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load evaluation."
+                    );
+
+                }
+
+
+                const result =
+                    await response.json();
+
+
+                document.getElementById(
+                    "totalTasks"
+                ).textContent =
+                    result.total_tasks;
+
+
+                document.getElementById(
+                    "successfulTasks"
+                ).textContent =
+                    result.successful_tasks;
+
+
+                document.getElementById(
+                    "successRate"
+                ).textContent =
+                    result.success_rate_percent +
+                    "%";
+
+
+                document.getElementById(
+                    "policyChecks"
+                ).textContent =
+                    result.policy_checks;
+
+
+                document.getElementById(
+                    "ragTasks"
+                ).textContent =
+                    result.rag_tasks;
+
+
+                document.getElementById(
+                    "externalAI"
+                ).textContent =
+                    result.external_ai_api;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Evaluation loading failed:",
+                    error
+                );
+
+                document.getElementById(
+                    "totalTasks"
+                ).textContent = "—";
+
+                document.getElementById(
+                    "successfulTasks"
+                ).textContent = "—";
+
+                document.getElementById(
+                    "successRate"
+                ).textContent = "—";
+
+                document.getElementById(
+                    "policyChecks"
+                ).textContent = "—";
+
+                document.getElementById(
+                    "ragTasks"
+                ).textContent = "—";
+
+                document.getElementById(
+                    "externalAI"
+                ).textContent = "Unavailable";
+
+            }
+
+        }
+
+
+        /* =========================================
+           HTML ESCAPE
+        ========================================= */
+
+        function escapeHtml(
+            value
+        ) {
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        /* =========================================
+           INITIAL PAGE LOAD
+        ========================================= */
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                loadSecurityStatus();
+
+                loadDocuments();
+
+                loadAudit();
+
+                loadEvaluation();
+
+            }
+        );
 
 
     </script>
