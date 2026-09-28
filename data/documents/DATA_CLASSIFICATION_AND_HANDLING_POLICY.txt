@@ -1,0 +1,61 @@
+Sovereign AI Workbench | Internal Enterprise Policy
+Page 1
+SOVEREIGN AI WORKBENCH
+ POL-DATA-001
+Data Classification and Handling Policy
+Classification, storage, transmission, and sharing requirements for organizational information.
+Document Owner
+Information Security Office
+Classification
+Internal — Enterprise Policy
+Version
+1.0
+Effective Date
+01 September 2026
+Review Cycle
+Annual or after a material security change
+Key Rule
+Confidential and Restricted information must remain within organization-approved systems unless an
+authorized exception or approved external-sharing process applies.
+1. Purpose
+ Define a consistent classification system for organizational information.
+ Specify appropriate storage, access, transmission, and sharing requirements.
+ Reduce the risk of unauthorized disclosure, loss, or misuse of organizational data.
+2. Data Classification Levels
+ Public — Information approved for unrestricted public distribution, such as published company announcements
+and approved marketing material.
+ Internal — Routine business information intended for employees and authorized contractors. It must not be
+distributed publicly without approval.
+ Confidential — Sensitive business, employee, customer, financial, technical, or operational information
+requiring controlled access.
+ Restricted — Highly sensitive information requiring the strongest access controls. Access is limited to
+specifically authorized personnel on a need-to-know basis.
+3. Handling Requirements
+ Employees must store Confidential and Restricted information only in organization-approved systems.
+ Confidential and Restricted information must not be stored on personal computers, personal phones, or
+personal cloud-storage accounts.
+ Employees must verify recipients before sending Confidential or Restricted information.
+ External sharing of Confidential information requires authorization from the responsible department head or
+designated data owner.
+ Restricted information must not be externally shared unless explicitly authorized by the designated data owner
+and required controls are in place.
+ Printed Confidential or Restricted material must be protected from unauthorized viewing and securely disposed
+of when no longer required.
+
+Sovereign AI Workbench | Internal Enterprise Policy
+Page 2
+4. Transmission and Sharing
+ Use organization-approved secure channels when transmitting Confidential or Restricted information.
+ Do not upload organizational Confidential or Restricted information to unapproved online services.
+ Do not forward sensitive organizational information to personal email accounts.
+ When external sharing is approved, share only the minimum information required for the business purpose.
+5. Employee Responsibilities
+ Classify information before storing or sharing it.
+ Follow access restrictions associated with the classification level.
+ Report suspected loss, accidental disclosure, or unauthorized access to the IT security team as soon as
+possible.
+ When uncertain about classification or handling, consult the Information Security Office or data owner.
+6. Policy Exceptions
+ Exceptions require documented approval from the appropriate data owner and Information Security Office.
+ Approved exceptions must define the scope, duration, business justification, and required safeguards.
+

@@ -1,0 +1,54 @@
+Sovereign AI Workbench | Internal Enterprise Policy
+Page 1
+SOVEREIGN AI WORKBENCH
+ POL-ACC-003
+Access Control Policy
+Identity, authentication, authorization, and access-review requirements for organizational systems.
+Document Owner
+Identity and Access Management
+Classification
+Internal — Enterprise Policy
+Version
+1.0
+Effective Date
+01 September 2026
+Review Cycle
+Annual or after major access-control changes
+Key Rule
+Organizational credentials belong to the assigned user. Never share passwords, authentication codes, or
+access tokens with another person.
+1. Purpose
+ Ensure access to organizational systems and information is granted only to authorized users.
+ Apply least-privilege and need-to-know principles to reduce unauthorized access.
+2. Account Management
+ Each employee must use their individually assigned organizational account.
+ Users must not share organizational usernames, passwords, authentication codes, or access tokens.
+ Accounts must be disabled or adjusted when employment status or role changes require it.
+ Privileged or administrative access must be separately controlled and granted only when required.
+3. Authentication Requirements
+ Users must protect passwords and authentication credentials from disclosure.
+ Passwords must not be written in publicly accessible locations or shared with other people.
+ Multi-factor authentication must be used where the organization has enabled or requires it.
+ Authentication codes, recovery codes, and security tokens must be treated as confidential credentials.
+4. Authorization and Least Privilege
+ Access must be limited to systems and information required for an employee’s assigned responsibilities.
+ Requests for additional access must follow the organization’s approval process.
+ Access to Confidential and Restricted information requires appropriate authorization.
+ Users must not attempt to bypass access controls or use another person’s account.
+5. Access Reviews
+ Access rights should be reviewed periodically by responsible system or data owners.
+ Unnecessary or outdated access must be removed promptly.
+
+Sovereign AI Workbench | Internal Enterprise Policy
+Page 2
+ Privileged access requires additional review and monitoring.
+6. Remote and External Access
+ Remote access to internal systems must use organization-approved secure access mechanisms.
+ Users must not bypass organizational access controls using unauthorized remote-access tools.
+ External service providers may receive access only through approved authorization and security procedures.
+7. Reporting
+ Suspected credential compromise, unauthorized access, or account misuse must be reported to the IT security
+team as soon as possible.
+ Users must cooperate with security actions such as credential resets, access reviews, or account restrictions
+when required.
+
